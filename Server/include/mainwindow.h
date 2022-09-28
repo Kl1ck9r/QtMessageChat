@@ -6,6 +6,8 @@
 #include <QTcpServer>
 #include <QMessageBox>
 #include <QSet>
+#include <QDateTime>
+
 
 
 QT_BEGIN_NAMESPACE
@@ -25,6 +27,7 @@ public slots:
     void newConnection();
     void readyRead();
 
+
 private slots:
     void on_pushButton_clicked();
 
@@ -33,9 +36,14 @@ private slots:
     void on_pushButton_2_clicked();
 
 private:
+    QTcpServer *file_server;
+    QTcpSocket *file_socket;
+
     QTcpServer *m_server;
     QTcpSocket *m_socket;
-    quint16 _blockSize;
+
+    QDateTime time_current;
+
     Ui::MainWindow *ui;
 };
 #endif // MAINWINDOW_H
