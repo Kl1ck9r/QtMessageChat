@@ -4,7 +4,7 @@
 #include <QMainWindow>
 #include <QTcpSocket>
 #include <QMessageBox>
-
+#include <QDateTime>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -29,6 +29,7 @@ private slots:
     void on_lineEdit_3_returnPressed();
 
 private:
+    QDateTime time_current;
     QTcpSocket *m_clientSocket;
     Ui::MainWindow *ui;
 };
